@@ -1,19 +1,20 @@
-Data load
+Similar data are merged using rbind() function. e.g. Training and test data of X, Y and subject are merged.
 
-The Features, Actitivy, and Train data is loaded from each of the training and test datasets, directly as their final type.
-Only the columns of interest from Features are loaded, that is the mean() and sd() columns. 
-I determine the columns by examining the feature names (from features.txt) for patterns “-mean()” or “-std()”.
-All of these files are fixed format text files.
+Columns with meaures MEAN and STANDARD DEVIATION are extracted from the dataset. 
 
-Transformation
-Extracts only the measurements on the mean and standard deviation for each measurement.
-Get the mean and standard deviation by using grep function. 
-subset the original data set with the mean and standard deviation when we loaded in the previous step.
+Appropriate names are updated from features.txt file in the obtained dataset.
 
-Named all the data by using: start with "^" and set the criterias to find certain words as column's names. 
-Then appended them all into the "data" from previous step.
+From the activity_labels.txt file, corresponding activites are updated in the dataset. (Available activites are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
 
-Wrote the table by using write.table function. 
-R created a workspace file. 
+Independent tidy dataset with mean value for each subject and activity is generated. The output file is tidy_data_V2.txt to be different with version 1
 
+##Description of Variables
 
+X_test, Y_test, X_train, Y_trian, sj_test and sj_train contain the data from the downloaded files.
+x, y and sj merge the previous datasets mentioned above.
+features contains the file features.txt. 
+ms contains all the columns having literal 'mean' or 'std'.
+activities contains the file activity_labels.txt. 
+Data merges x, y and sj into a single dataset. 
+
+And finally, avg contains the corresponding averages which is finally stored in tidy_data_V2.txt file.
