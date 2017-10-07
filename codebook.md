@@ -1,4 +1,4 @@
-Similar data are merged using rbind() function. e.g. Training and test data of X, Y and subject are merged.
+Similar data are merged using rbind() function. e.g. Training and test data of x, y and sj(as for "Subject) are merged.
 
 Columns with meaures MEAN and STANDARD DEVIATION are extracted from the dataset. 
 
